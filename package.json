@@ -1,0 +1,31 @@
+{
+  "name": "web-vad",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jptaylor/web-vad",
+  "description": "Browser VAD",
+  "keywords": [
+    "speech-recognition",
+    "wake-word-detection",
+    "machine-learning",
+    "voice-activity-detection",
+    "vad",
+    "onnx",
+    "voice-control",
+    "offline-speech-recognition"
+  ],
+  "license": "ISC",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "./scripts/build.sh"
+  },
+  "devDependencies": {
+    "@types/audioworklet": "^0.0.56",
+    "@types/node": "^20.14.9",
+    "typescript": "^5.5.3",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "onnxruntime-web": "^1.18.0"
+  }
+}
