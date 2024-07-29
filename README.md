@@ -12,7 +12,7 @@ Ensure `silero_vad.onnx` (included in this repo) is hosted somewhere accessible 
 
 #### Ensure audio worker is available globally
 
-Browsers ensure worklets cannot be imported as modules for safety reasons. Either import it with your framework specific syntax (e.g. `import AudioWorkletURL from "web-vad/worklet.js?worker&url";`) or include it manually in a `<script>` declaration (at a higher order.)
+Browsers ensure worklets cannot be imported as modules for safety reasons. Either import it with your framework specific syntax (e.g. `import AudioWorkletURL from "web-vad/dist/worklet.js?worker&url";`) or include it manually in a `<script>` declaration (at a higher order.)
 
 #### Example project
 
@@ -31,7 +31,7 @@ Navigate to the URL shown in your terminal
 
 ```typescript
 import { VAD } from "web-vad";
-import AudioWorkletURL from "web-vad/worklet.js?worker&url";
+import AudioWorkletURL from "web-vad/dist/worklet.js?worker&url";
 
 
 const localAudioTrack = ... // Get mic or other audio track

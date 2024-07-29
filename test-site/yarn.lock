@@ -624,3 +624,8 @@ vite@^5.3.4:
     rollup "^4.13.0"
   optionalDependencies:
     fsevents "~2.3.3"
+
+web-vad@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/web-vad/-/web-vad-0.0.2.tgz#b7627013564796479771bbd0be1ee7ddd2fdab85"
+  integrity sha512-pdtQ4QsoC6p5GdGK9FUHda1rHxiGN9+oeO/1HTKSn3RpKz6mwcx/ZQbVkVCDUE/f+rcMZPbI1PjnXofZOy3yGw==

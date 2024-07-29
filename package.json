@@ -1,11 +1,21 @@
 {
   "name": "web-vad",
-  "version": "0.0.2",
+  "version": "0.0.4",
+  "author": "Jonathan Taylor",
   "homepage": "https://github.com/jptaylor/web-vad",
   "description": "Browser VAD",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "package.json",
+    "yarn.lock",
+    "README.md",
+    "LICENSE"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jptaylor/web-vad.git"
+    "url": "git+https://github.com/jptaylor/web-vad.git"
   },
   "keywords": [
     "speech-recognition",

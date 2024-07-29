@@ -1,5 +1,5 @@
-import { VAD } from "../../dist";
-import AudioWorkletURL from "../../dist/worklet.js?worker&url";
+import { VAD } from "web-vad";
+import AudioWorkletURL from "web-vad/dist/worklet.js?worker&url";
 
 async function createVAD() {
   const vad = new VAD({
