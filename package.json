@@ -1,6 +1,6 @@
 {
   "name": "web-vad",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Jonathan Taylor",
   "homepage": "https://github.com/jptaylor/web-vad",
   "description": "Web Voice Activity Detection (VAD)",

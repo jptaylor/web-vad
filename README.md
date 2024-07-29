@@ -8,7 +8,7 @@ Adaption of [@ricky0123's vad library](https://github.com/ricky0123/vad) that sl
 
 #### Copy Silero model somewhere accessible
 
-Ensure `silero_vad.onnx` (included in this repo) is hosted somewhere accessible (e.g. a public / static path.)
+Ensure `silero_vad.onnx` (included in this repo [here](https://github.com/jptaylor/web-vad/blob/main/silero_vad.onnx)) is hosted somewhere accessible (e.g. a public / static path.)
 
 #### Ensure audio worker is available globally
 
