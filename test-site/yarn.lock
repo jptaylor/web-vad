@@ -625,7 +625,7 @@ vite@^5.3.4:
   optionalDependencies:
     fsevents "~2.3.3"
 
-web-vad@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/web-vad/-/web-vad-0.0.2.tgz#b7627013564796479771bbd0be1ee7ddd2fdab85"
-  integrity sha512-pdtQ4QsoC6p5GdGK9FUHda1rHxiGN9+oeO/1HTKSn3RpKz6mwcx/ZQbVkVCDUE/f+rcMZPbI1PjnXofZOy3yGw==
+web-vad@*:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/web-vad/-/web-vad-0.0.4.tgz#727ff123cc88ab72846319e48fcb29f8262b6197"
+  integrity sha512-Xk5krlxHbqeprS/UJcHCu2qjV1YbblQenoSaqsmOErKGpN/MTyj6MxUCktwi8/P+LSF9dgNqtBwaLil6nWh+Yw==

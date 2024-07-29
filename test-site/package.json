@@ -15,6 +15,6 @@
   },
   "dependencies": {
     "onnxruntime-web": "^1.18.0",
-    "web-vad": "^0.0.4"
+    "web-vad": "*"
   }
 }

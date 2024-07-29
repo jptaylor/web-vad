@@ -3,7 +3,7 @@
   "version": "0.0.4",
   "author": "Jonathan Taylor",
   "homepage": "https://github.com/jptaylor/web-vad",
-  "description": "Browser VAD",
+  "description": "Web Voice Activity Detection (VAD)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
