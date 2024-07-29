@@ -26,9 +26,9 @@ export class Silero {
 
   async init(modelURL: string) {
     try {
-      const modelArrayBuffer = await fetch(modelURL).then((m) =>
-        m.arrayBuffer()
-      );
+      const modelArrayBuffer = await fetch(modelURL, {
+        cache: "force-cache",
+      }).then((m) => m.arrayBuffer());
       this._session = await ort.InferenceSession.create(modelArrayBuffer);
       this.reset_state();
     } catch (e) {

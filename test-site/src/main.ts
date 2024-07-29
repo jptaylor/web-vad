@@ -1,6 +1,12 @@
 import { VAD } from "web-vad";
 import AudioWorkletURL from "web-vad/dist/worklet.js?worker&url";
 
+async function run() {
+  await VAD.precacheModels("/silero-vad.onnx");
+
+  createVAD();
+}
+
 async function createVAD() {
   const vad = new VAD({
     workletURL: AudioWorkletURL,
@@ -23,7 +29,7 @@ async function createVAD() {
   vad.start();
 }
 
-createVAD();
+run();
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>

@@ -45,7 +45,8 @@
     }
   },
   "scripts": {
-    "build": "parcel build --no-cache && tsc --declaration --allowJs --emitDeclarationOnly"
+    "build": "parcel build --no-cache && tsc --declaration --allowJs --emitDeclarationOnly",
+    "dev": "parcel watch"
   },
   "devDependencies": {
     "@parcel/packager-ts": "^2.12.0",
@@ -60,7 +61,7 @@
     "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4"
   },
-  "peerDependencies": {
+  "dependencies": {
     "onnxruntime-web": "^1.18.0"
   }
 }

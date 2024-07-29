@@ -21,6 +21,7 @@ An barebones example is included in this repo:
 ```shell
 cd test-site
 yarn
+yarn run build # Copies onnx wasm to dist directory
 yarn run dev
 ```
 
@@ -94,6 +95,22 @@ export default defineConfig({
   ],
 });
 
+```
+
+## Precaching models
+
+Both the Silero.onnx and ONNX runtime wasms are quite large in size (~10mb). The VAD class exposes a static method for precaching these:
+
+```typescript
+import {VAD} from "web-vad";
+
+async function run() {
+  console.log("Precaching models");
+  await VAD.precacheModels("/silero-vad.onnx");
+  console.log("Download complete!");
+  
+  //...start()
+}
 ```
 
 ## References

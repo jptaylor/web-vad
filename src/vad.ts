@@ -192,6 +192,27 @@ export class VAD implements VADInterface {
 
     this.state = VADState.destroyed;
   };
+
+  static async precacheModels(sileroURL: string) {
+    try {
+      await fetch(sileroURL, {
+        cache: "force-cache",
+      });
+    } catch (e) {
+      throw new Error(
+        `Unable to load Silero model: ${sileroURL} - Have you moved it to the public/static folder?`
+      );
+    }
+    try {
+      await fetch("/ort-wasm-simd-threaded.wasm", {
+        cache: "force-cache",
+      });
+    } catch (e) {
+      throw new Error(
+        `Unable to load ONNX runtime: /ort-wasm-simd-threaded.wasm - Have you moved it to the public/static folder?`
+      );
+    }
+  }
 }
 
 export default VAD;
