@@ -6,13 +6,25 @@ Adaption of [@ricky0123's vad library](https://github.com/ricky0123/vad) that sl
 
 `npm install onnxruntime-web web-vad`
 
-### Copy Silero model somewhere accessible
+#### Copy Silero model somewhere accessible
 
 Ensure `silero_vad.onnx` (included in this repo) is hosted somewhere accessible (e.g. a public / static path.)
 
-### Ensure audio worker is available globally
+#### Ensure audio worker is available globally
 
 Browsers ensure worklets cannot be imported as modules for safety reasons. Either import it with your framework specific syntax (e.g. `import AudioWorkletURL from "web-vad/worklet.js?worker&url";`) or include it manually in a `<script>` declaration (at a higher order.)
+
+#### Example project
+
+An barebones example is included in this repo:
+
+```shell
+cd test-site
+yarn
+yarn run dev
+```
+
+Navigate to the URL shown in your terminal
 
 
 ## Usage

@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "homepage": "https://github.com/jptaylor/web-vad",
   "description": "Browser VAD",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jptaylor/web-vad.git"
+  },
   "keywords": [
     "speech-recognition",
     "wake-word-detection",
