@@ -29,7 +29,7 @@ export class AudioVADNode implements AudioVADNodeInterface {
       await this.audioContext.audioWorklet.addModule(this.options.workletURL);
     } catch (e) {
       console.error(
-        `Encountered an error while loading worklet. Please make sure the worklet vad.bundle.min.js included with @ricky0123/vad-web is available at the specified path:
+        `Encountered an error while loading worklet. Please import the worklet file at:
             ${this.options.workletURL}
             If need be, you can customize the worklet file location using the \`workletURL\` option.`
       );

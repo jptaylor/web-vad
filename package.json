@@ -14,18 +14,39 @@
     "offline-speech-recognition"
   ],
   "license": "ISC",
-  "main": "dist/index.js",
+  "targets": {
+    "vad": {
+      "source": "src/index.ts",
+      "context": "browser",
+      "distDir": "dist",
+      "isLibrary": true,
+      "outputFormat": "esmodule",
+      "includeNodeModules": false
+    },
+    "worklet": {
+      "source": "src/worklet.ts",
+      "distDir": "dist",
+      "context": "web-worker",
+      "outputFormat": "global"
+    }
+  },
   "scripts": {
-    "build": "./scripts/build.sh"
+    "build": "parcel build --no-cache && tsc --declaration --allowJs --emitDeclarationOnly"
   },
   "devDependencies": {
+    "@parcel/packager-ts": "^2.12.0",
+    "@parcel/transformer-typescript-types": "^2.12.0",
+    "@parcel/transformer-worklet": "^2.12.0",
     "@types/audioworklet": "^0.0.56",
     "@types/node": "^20.14.9",
+    "buffer": "^6.0.3",
+    "parcel": "^2.12.0",
+    "process": "^0.11.10",
     "typescript": "^5.5.3",
     "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4"
   },
-  "dependencies": {
+  "peerDependencies": {
     "onnxruntime-web": "^1.18.0"
   }
 }

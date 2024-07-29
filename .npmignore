@@ -7,4 +7,3 @@ tests/
 webpack.config.js
 playwright.config.ts
 tsconfig*
-!*.onnx

@@ -8,7 +8,7 @@ import { AudioVADNode } from "./node";
 
 const defaultVADOptions: VADOptions = {
   ...defaultFrameProcessorOptions,
-  workletURL: "./worklet.ts",
+  workletURL: "./worklet.js",
   modelURL: "./silero_vad.onnx",
   stream: null,
   onVADMisfire: () => {

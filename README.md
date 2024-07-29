@@ -1,23 +1,28 @@
-# Web Voice-Activity-Detection (VAD)
+# Web Voice Activity Detection (VAD)
 
-Adaption of [@ricky0123's vad library](https://github.com/ricky0123/vad) that slightly shifts the API to support [Pipecat](https://www.pipecat.ai) use-cases.
+Adaption of [@ricky0123's vad library](https://github.com/ricky0123/vad) that slightly shifts the API to only support passing a media stream, addresses some Typescript issues and reduces the codebase where possible. The primary purpose of this adaption is to support realtime voice agents, such as those provided by [Pipecat](https://www.pipecat.ai).
 
 ## Getting started
 
-`npm install onnxruntime-web @types/audioworklet @types/node web-vad`
+`npm install onnxruntime-web web-vad`
 
 ### Copy Silero model somewhere accessible
-Ensure `silero_vad.onnx` is hosted somewhere accessible (e.g. a public / static path.)
+
+Ensure `silero_vad.onnx` (included in this repo) is hosted somewhere accessible (e.g. a public / static path.)
+
+### Ensure audio worker is available globally
+
+Browsers ensure worklets cannot be imported as modules for safety reasons. Either import it with your framework specific syntax (e.g. `import AudioWorkletURL from "web-vad/worklet.js?worker&url";`) or include it manually in a `<script>` declaration (at a higher order.)
+
+
+## Usage
 
 ```typescript
 import { VAD } from "web-vad";
-import AudioWorkletURL from "@/vad/worklet.ts?worker&url";
+import AudioWorkletURL from "web-vad/worklet.js?worker&url";
 
-enum State {
-  SPEAKING = "Speaking",
-  SILENT = "Silent",
-}
 
+const localAudioTrack = ... // Get mic or other audio track
 const stream = new MediaStream([localAudioTrack!]);
 
 const vad = new VAD({
@@ -25,13 +30,13 @@ const vad = new VAD({
     modelUrl: "path-to-silero.onnx",
     stream,
     onSpeechStart: () => {
-        setCurrentState(State.SPEAKING);
+        console.log("speaking start");
     },
     onVADMisfire: () => {
-        setCurrentState(State.SILENT);
+        console.log("misfire");
     },
     onSpeechEnd: () => {
-        setCurrentState(State.SILENT);
+        console.log("speaking end");
     },
 });
 
@@ -45,7 +50,9 @@ console.log(vad.state);
 // > VADState.listening
 ```
 
-## Vite support
+## Next / Vite support
+
+Web VAD uses WASM files provided by ONNX. Whilst these can be loaded at runtime, it is recommended to copy these files to your build / deployment. Here is an example `vite.config.js` that copies these files across at build time:
 
 ```js
 // vite.config.js

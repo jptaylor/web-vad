@@ -7,8 +7,9 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-dist
 node_modules
+dist
+dist-ssr
 *.local
 
 # Editor directories and files
@@ -21,9 +22,5 @@ node_modules
 *.njsproj
 *.sln
 *.sw?
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
 
-.parcel-cache/
+silero_vad.onnx

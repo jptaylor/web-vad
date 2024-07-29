@@ -25,9 +25,17 @@ export class Silero {
   }
 
   async init(modelURL: string) {
-    const modelArrayBuffer = await fetch(modelURL).then((m) => m.arrayBuffer());
-    this._session = await ort.InferenceSession.create(modelArrayBuffer);
-    this.reset_state();
+    try {
+      const modelArrayBuffer = await fetch(modelURL).then((m) =>
+        m.arrayBuffer()
+      );
+      this._session = await ort.InferenceSession.create(modelArrayBuffer);
+      this.reset_state();
+    } catch (e) {
+      throw new Error(
+        `Unable to load model: ${modelURL} - Have you moved it to the public/static folder?`
+      );
+    }
   }
 
   reset_state = () => {
